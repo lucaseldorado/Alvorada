@@ -1,3 +1,6 @@
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
+
 type PaginationProps = {
   current: number;
   total: number;
@@ -8,21 +11,21 @@ export function Pagination({ current, total, size = 'md' }: PaginationProps) {
   const pages = Array.from({ length: total }, (_, index) => index + 1);
 
   return (
-    <nav className="pagination" aria-label="Pagination">
-      <button className={`pagination__item ${size === '2xl' ? 'pagination__item--2xl' : ''}`.trim()} type="button" aria-label="Previous page">
+    <nav className={styles.pagination} aria-label="Pagination">
+      <button className={cn(styles.pagination__item, size === '2xl' && styles['pagination__item--2xl'])} type="button" aria-label="Previous page">
         ‹
       </button>
       {pages.map((page) => (
         <button
           key={page}
           type="button"
-          className={`pagination__item ${page === current ? 'pagination__item--active' : ''} ${size === '2xl' ? 'pagination__item--2xl' : ''}`.trim()}
+          className={cn(styles.pagination__item, page === current && styles['pagination__item--active'], size === '2xl' && styles['pagination__item--2xl'])}
           aria-current={page === current ? 'page' : undefined}
         >
           {page}
         </button>
       ))}
-      <button className={`pagination__item ${size === '2xl' ? 'pagination__item--2xl' : ''}`.trim()} type="button" aria-label="Next page">
+      <button className={cn(styles.pagination__item, size === '2xl' && styles['pagination__item--2xl'])} type="button" aria-label="Next page">
         ›
       </button>
     </nav>

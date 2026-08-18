@@ -19,8 +19,26 @@ npm run build
 npm run preview
 ```
 
+## Estilos (isolados por componente)
+
+Os componentes usam CSS Modules para evitar contaminação global de estilos.
+
+- `src/components/ui/ui.module.css` (CSS simples)
+- `src/components/ui/ui.module.scss` (Sass)
+- `src/pages/design-system/page.module.css` (CSS simples)
+- `src/pages/design-system/page.module.scss` (Sass)
+
+O dev escolhe qual engine usar via variável de ambiente:
+
+```bash
+VITE_UI_STYLES=css   # usa .module.css
+VITE_UI_STYLES=sass  # usa .module.scss (padrão)
+```
+
 ## Estrutura
 
 - `src/components/ui/` — componentes do design system
-- `src/styles.css` — tokens e classes base
-- `src/App.tsx` — página demo dos componentes
+- `src/icons/` — ícones em SVG como componentes React
+- `src/pages/design-system/sections/` — seções da página demo (inclui seção de ícones)
+- `src/styles.css` — reset global mínimo + import de tokens
+- `src/App.tsx` — entrada da aplicação

@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
 
 type TooltipProps = {
   content: string;
@@ -8,5 +10,5 @@ type TooltipProps = {
 };
 
 export function Tooltip({ content, children, tone = 'inverse', appearance = 'filled' }: TooltipProps) {
-  return <span className={`tooltip tooltip--${tone}-${appearance}`}>{children ?? content}</span>;
+  return <span className={cn(styles.tooltip, styles[`tooltip--${tone}-${appearance}`])}>{children ?? content}</span>;
 }

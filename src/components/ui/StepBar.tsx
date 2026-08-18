@@ -1,4 +1,6 @@
 import { Fragment } from 'react';
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
 
 type StepBarProps = {
   steps: string[];
@@ -7,16 +9,16 @@ type StepBarProps = {
 
 export function StepBar({ steps, currentStep }: StepBarProps) {
   return (
-    <ol className="step-bar">
+    <ol className={styles['step-bar']}>
       {steps.map((step, index) => (
         <Fragment key={step}>
           <li
-            className={`step-bar__step ${index === currentStep ? 'step-bar__step--active' : ''} ${index < currentStep ? 'step-bar__step--complete' : ''}`.trim()}
+            className={cn(styles['step-bar__step'], index === currentStep && styles['step-bar__step--active'], index < currentStep && styles['step-bar__step--complete'])}
           >
             {index + 1}
           </li>
           {index < steps.length - 1 ? (
-            <li className={`step-bar__connector ${index < currentStep ? 'step-bar__connector--complete' : ''}`.trim()} />
+            <li className={cn(styles['step-bar__connector'], index < currentStep && styles['step-bar__connector--complete'])} />
           ) : null}
         </Fragment>
       ))}

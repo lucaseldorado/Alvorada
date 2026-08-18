@@ -1,3 +1,6 @@
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
+
 type ProgressBarProps = {
   value: number;
   max?: number;
@@ -10,16 +13,16 @@ export function ProgressBar({ value, max = 100, size = 'md', showLabel = false }
 
   return (
     <div
-      className={`progress-bar ${size === 'lg' ? 'progress-bar--lg' : ''}`.trim()}
+      className={cn(styles['progress-bar'], size === 'lg' && styles['progress-bar--lg'])}
       role="progressbar"
       aria-valuenow={value}
       aria-valuemin={0}
       aria-valuemax={max}
     >
-      <span className="progress-bar__track">
-        <span className="progress-bar__fill" style={{ width: `${percentage}%` }} />
+      <span className={styles['progress-bar__track']}>
+        <span className={styles['progress-bar__fill']} style={{ width: `${percentage}%` }} />
       </span>
-      {showLabel ? <span className="progress-bar__label">{Math.round(percentage)}%</span> : null}
+      {showLabel ? <span className={styles['progress-bar__label']}>{Math.round(percentage)}%</span> : null}
     </div>
   );
 }

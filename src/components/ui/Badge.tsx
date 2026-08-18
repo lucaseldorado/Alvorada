@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
 
 type BadgeProps = {
   children: ReactNode;
@@ -8,5 +10,5 @@ type BadgeProps = {
 };
 
 export function Badge({ children, color = 'blue', appearance = 'light', size = 'md' }: BadgeProps) {
-  return <span className={`badge badge--${size} badge--${color}-${appearance}`}>{children}</span>;
+  return <span className={cn(styles.badge, styles[`badge--${size}`], styles[`badge--${color}-${appearance}`])}>{children}</span>;
 }

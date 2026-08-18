@@ -1,3 +1,6 @@
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
+
 type StatusBadgeProps = {
   label: string;
   tone?: 'neutral' | 'success' | 'warning' | 'error' | 'info';
@@ -5,8 +8,8 @@ type StatusBadgeProps = {
 
 export function StatusBadge({ label, tone = 'neutral' }: StatusBadgeProps) {
   return (
-    <span className={`status-badge status-badge--${tone}`}>
-      <span className="status-badge__dot" />
+    <span className={cn(styles['status-badge'], styles[`status-badge--${tone}`])}>
+      <span className={styles['status-badge__dot']} />
       {label}
     </span>
   );

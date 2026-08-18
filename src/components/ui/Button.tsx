@@ -1,4 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react';
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
 
 type ButtonVariant = 'primary' | 'neutral' | 'error';
 type ButtonAppearance = 'filled' | 'light' | 'outline' | 'ghost' | 'glass';
@@ -17,5 +19,5 @@ export function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  return <button className={`btn btn--${size} btn--${variant}-${appearance} ${className}`.trim()} {...props} />;
+  return <button className={cn(styles.btn, styles[`btn--${size}`], styles[`btn--${variant}-${appearance}`], className)} {...props} />;
 }

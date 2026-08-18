@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import { cn } from './cn';
+import { uiStyles as styles } from './uiStyles';
 
 type ListItemProps = {
   title: string;
@@ -10,13 +12,13 @@ type ListItemProps = {
 
 export function ListItem({ title, description, leading, trailing, active = false }: ListItemProps) {
   return (
-    <div className={`list-item ${active ? 'list-item--active' : ''}`.trim()}>
-      {leading ? <div className="list-item__leading">{leading}</div> : null}
-      <div className="list-item__content">
-        <strong className="list-item__title">{title}</strong>
-        {description ? <p className="list-item__description">{description}</p> : null}
+    <div className={cn(styles['list-item'], active && styles['list-item--active'])}>
+      {leading ? <div className={styles['list-item__leading']}>{leading}</div> : null}
+      <div className={styles['list-item__content']}>
+        <strong className={styles['list-item__title']}>{title}</strong>
+        {description ? <p className={styles['list-item__description']}>{description}</p> : null}
       </div>
-      {trailing ? <div className="list-item__trailing">{trailing}</div> : null}
+      {trailing ? <div className={styles['list-item__trailing']}>{trailing}</div> : null}
     </div>
   );
 }
