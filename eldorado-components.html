@@ -207,6 +207,25 @@
         color: var(--brand);
       }
 
+      .text {
+        display: grid;
+        gap: 8px;
+      }
+
+      .text__sample {
+        display: grid;
+        gap: 4px;
+      }
+
+      .text__sample strong {
+        font-size: 20px;
+      }
+
+      .text__sample span {
+        color: var(--text-muted);
+        font-size: 14px;
+      }
+
       .input,
       .select {
         width: 100%;
@@ -284,6 +303,24 @@
         border-radius: 999px;
         background: #ececec;
         font-weight: 700;
+      }
+
+      .image-card {
+        display: grid;
+        gap: 12px;
+      }
+
+      .image-card__frame {
+        width: 100%;
+        min-height: 180px;
+        border-radius: 14px;
+        border: 1px dashed var(--border);
+        background:
+          linear-gradient(135deg, #fff, #f4f4f4);
+        display: grid;
+        place-items: center;
+        color: var(--text-muted);
+        font-weight: 600;
       }
 
       .icon-list {
@@ -376,11 +413,22 @@
           <nav class="sidebar__nav">
             <a href="#overview">Overview</a>
             <a href="#buttons">Buttons</a>
-            <a href="#inputs">Inputs</a>
-            <a href="#feedback">Feedback</a>
-            <a href="#composition">Composição</a>
-            <a href="#icons">Ícones</a>
-          </nav>
+                <a href="#content">Content</a>
+                <a href="#inputs">Inputs</a>
+                <a href="#feedback">Feedback</a>
+                <a href="#divider">Divider</a>
+                <a href="#file-upload">File & Upload</a>
+                <a href="#composition">Composição</a>
+                <a href="#pagination">Pagination</a>
+                <a href="#progress">Progress Bar</a>
+                <a href="#radio">Radio</a>
+                <a href="#rating">Rating</a>
+                <a href="#tabmenu">Tab Menu</a>
+                <a href="#tag">Tag</a>
+                <a href="#table">Table</a>
+                <a href="#images">Images</a>
+                <a href="#icons">Ícones</a>
+              </nav>
         </aside>
 
         <div class="content">
@@ -470,6 +518,34 @@
             </table>
           </section>
 
+          <section class="section" id="content">
+            <div class="section__header">
+              <h2>Content</h2>
+              <p class="section__intro">Tipografia, títulos e blocos de conteúdo organizam a leitura e a hierarquia.</p>
+            </div>
+            <div class="grid">
+              <article class="example-card">
+                <h3>Hierarchy</h3>
+                <div class="text">
+                  <div class="text__sample">
+                    <strong>Title / Heading</strong>
+                    <span>Texto principal de referência visual.</span>
+                  </div>
+                  <div class="text__sample">
+                    <strong>Body / Paragraph</strong>
+                    <span>Conteúdo descritivo e explicativo.</span>
+                  </div>
+                </div>
+              </article>
+              <article class="example-card">
+                <h3>Guideline</h3>
+                <p class="example-card__desc">
+                  Use títulos para estrutura, parágrafos para contexto e labels para instruções curtas.
+                </p>
+              </article>
+            </div>
+          </section>
+
           <section class="section" id="feedback">
             <div class="section__header">
               <h2>Feedback</h2>
@@ -494,6 +570,46 @@
                   <span class="status status--warning">Pending</span>
                   <span class="status status--error">Blocked</span>
                 </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="divider">
+            <div class="section__header">
+              <h2>Divider</h2>
+              <p class="section__intro">Separadores dividem conteúdo, grupos e blocos de decisão.</p>
+            </div>
+            <div class="grid">
+              <article class="example-card">
+                <h3>Solid</h3>
+                <p class="example-card__desc">Linha contínua para seções e grupos.</p>
+                <div class="spec-table" style="height: 1px; background: var(--border);"></div>
+              </article>
+              <article class="example-card">
+                <h3>Text / Icon</h3>
+                <p class="example-card__desc">Separadores com rótulo ou ícone central.</p>
+                <div class="example-row">
+                  <span>──────── <strong>Section</strong> ────────</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="file-upload">
+            <div class="section__header">
+              <h2>File & Upload</h2>
+              <p class="section__intro">Área para anexos e uploads, com zona de drop e feedback de arquivo.</p>
+            </div>
+            <div class="grid">
+              <article class="example-card">
+                <h3>Upload dropzone</h3>
+                <p class="example-card__desc">Área delimitada para arrastar e soltar arquivos.</p>
+                <div class="image-card__frame">Drop files here</div>
+              </article>
+              <article class="example-card">
+                <h3>File state</h3>
+                <p class="example-card__desc">Nome do arquivo, tamanho e status de envio.</p>
+                <pre>report.pdf · 2.4 MB · Uploaded</pre>
               </article>
             </div>
           </section>
@@ -536,6 +652,124 @@
   ]}
   rows={rows}
 /&gt;</pre>
+              </article>
+            </div>
+          </section>
+
+          <section class="section" id="pagination">
+            <div class="section__header">
+              <h2>Pagination</h2>
+              <p class="section__intro">Navegação entre páginas ou blocos de itens.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Controles numerados com estado ativo e setas de navegação.</p>
+              <pre>&lt;Pagination current={2} total={5} /&gt;</pre>
+            </article>
+          </section>
+
+          <section class="section" id="progress">
+            <div class="section__header">
+              <h2>Progress Bar</h2>
+              <p class="section__intro">Indica avanço em tarefas, fluxos e carregamentos.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Barra linear com percentual ou label opcional.</p>
+              <div class="image-card__frame">68% progress</div>
+            </article>
+          </section>
+
+          <section class="section" id="radio">
+            <div class="section__header">
+              <h2>Radio</h2>
+              <p class="section__intro">Seleção exclusiva entre opções relacionadas.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Use quando apenas uma escolha pode ser ativa.</p>
+              <pre>&lt;Radio name="theme" label="Light" /&gt;</pre>
+            </article>
+          </section>
+
+          <section class="section" id="rating">
+            <div class="section__header">
+              <h2>Rating</h2>
+              <p class="section__intro">Avaliação por estrelas ou unidades discretas.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Representação de nota, satisfação ou feedback qualitativo.</p>
+              <div class="example-row">
+                <span>★★★★☆</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="section" id="tabmenu">
+            <div class="section__header">
+              <h2>Tab Menu</h2>
+              <p class="section__intro">Alternância entre visões relacionadas dentro do mesmo contexto.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Tabs com indicador de ativo e navegação por conteúdo.</p>
+              <pre>&lt;TabMenu tabs={['Overview', 'Details', 'History']} activeIndex={0} /&gt;</pre>
+            </article>
+          </section>
+
+          <section class="section" id="tag">
+            <div class="section__header">
+              <h2>Tag</h2>
+              <p class="section__intro">Rótulos curtos para categorização, filtros e metadados.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Pequenas etiquetas com hierarquia leve.</p>
+              <div class="example-row">
+                <span class="badge">Design</span>
+                <span class="badge">React</span>
+              </div>
+            </article>
+          </section>
+
+          <section class="section" id="table">
+            <div class="section__header">
+              <h2>Table</h2>
+              <p class="section__intro">Tabela para dados estruturados e comparáveis.</p>
+            </div>
+            <article class="example-card">
+              <h3>Example</h3>
+              <p class="example-card__desc">Cabeçalho, corpo e linhas com separação clara.</p>
+              <table class="spec-table">
+                <tr>
+                  <th>Component</th>
+                  <td>Button</td>
+                </tr>
+                <tr>
+                  <th>Status</th>
+                  <td>Ready</td>
+                </tr>
+              </table>
+            </article>
+          </section>
+
+          <section class="section" id="images">
+            <div class="section__header">
+              <h2>Images</h2>
+              <p class="section__intro">Elementos visuais, thumbnails e imagens de conteúdo.</p>
+            </div>
+            <div class="grid">
+              <article class="example-card">
+                <h3>Thumbnail</h3>
+                <p class="example-card__desc">Área de imagem ou preview com proporção consistente.</p>
+                <div class="image-card__frame">Image preview</div>
+              </article>
+              <article class="example-card">
+                <h3>Guideline</h3>
+                <p class="example-card__desc">
+                  Sempre acompanhar imagens com texto alternativo e tratamento de estado para carregamento/erro.
+                </p>
               </article>
             </div>
           </section>

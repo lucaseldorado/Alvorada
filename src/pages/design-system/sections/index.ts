@@ -1,7 +1,17 @@
 export { DataSection } from './DataSection';
+export { ContentSection } from './ContentSection';
+export { DividerSection } from './DividerSection';
 export { FeedbackSection } from './FeedbackSection';
+export { FileUploadSection } from './FileUploadSection';
 export { FormControlsSection } from './FormControlsSection';
 export { HeroSection } from './HeroSection';
+export { ImagesSection } from './ImagesSection';
 export { IdentitySection } from './IdentitySection';
 export { IconsSection } from './IconsSection';
+export { PaginationSection } from './PaginationSection';
+export { ProgressSection } from './ProgressSection';
+export { RadioSection } from './RadioSection';
+export { RatingSection } from './RatingSection';
+export { TabMenuSection } from './TabMenuSection';
+export { TagSection } from './TagSection';
 export { NavigationSection } from './NavigationSection';
