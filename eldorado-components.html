@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eldorado Components Demo</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+      .demo-wrap {
+        display: grid;
+        gap: var(--gap-xl);
+      }
+      .demo-section {
+        display: grid;
+        gap: var(--gap-s);
+        padding: var(--padding-l);
+        border: var(--stroke-1) solid var(--border-secondary);
+        border-radius: var(--radii-12);
+        background: var(--bg-primary);
+      }
+      .demo-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--gap-s);
+      }
+      .demo-stack {
+        display: grid;
+        gap: var(--gap-s);
+      }
+      .demo-grid {
+        display: grid;
+        gap: var(--gap-s);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+      .theme-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--gap-xs);
+      }
+      .theme-switch input {
+        accent-color: var(--action-active);
+      }
+      html[data-theme='dark'] body {
+        background: var(--bg-secondary);
+      }
+      .demo-note {
+        font-size: var(--font-size-small);
+        color: var(--content-secondary);
+      }
+      .hero {
+        display: grid;
+        gap: var(--gap-xs);
+        padding-bottom: var(--padding-s);
+      }
+      .hero__title {
+        margin: 0;
+      }
+      .hero__desc {
+        margin: 0;
+        max-width: 80ch;
+        color: var(--content-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <section class="container demo-wrap">
+        <header class="hero">
+          <span class="badge badge--sm badge--orange-light">Eldorado Design System</span>
+          <h1 class="hero__title heading-s">CSS dos Componentes</h1>
+          <p class="hero__desc paragraph-base">
+            Vitrine fiel das classes, estados e tokens do sistema. Tudo abaixo usa a base semântica, os espaços e a
+            tipografia definidos no arquivo tokens.css.
+          </p>
+        </header>
+
+        <div class="theme-switch">
+          <input id="theme-toggle" type="checkbox" />
+          <label for="theme-toggle">Dark mode</label>
+        </div>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Button</h2>
+          <div class="demo-grid">
+            <button class="btn btn--2xl btn--primary-filled">Primary filled</button>
+            <button class="btn btn--2xl btn--primary-light">Primary light</button>
+            <button class="btn btn--2xl btn--primary-outline">Primary outline</button>
+            <button class="btn btn--2xl btn--primary-ghost">Primary ghost</button>
+            <button class="btn btn--2xl btn--primary-glass">Primary glass</button>
+            <button class="btn btn--2xl btn--neutral-filled">Neutral filled</button>
+            <button class="btn btn--2xl btn--neutral-light">Neutral light</button>
+            <button class="btn btn--2xl btn--neutral-outline">Neutral outline</button>
+            <button class="btn btn--2xl btn--neutral-ghost">Neutral ghost</button>
+            <button class="btn btn--2xl btn--error-filled">Error filled</button>
+            <button class="btn btn--2xl btn--error-light">Error light</button>
+            <button class="btn btn--2xl btn--error-outline">Error outline</button>
+            <button class="btn btn--2xl btn--error-ghost">Error ghost</button>
+          </div>
+          <div class="demo-row">
+            <button class="btn btn--lg btn--primary-filled">Small primary</button>
+            <button class="btn btn--lg btn--neutral-filled">Small neutral</button>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Text Input / Dropdown</h2>
+          <div class="demo-grid">
+            <label class="text-input">
+              <span class="text-input__label">Nome</span>
+              <input class="text-input__field" type="text" placeholder="Digite seu nome" />
+              <span class="text-input__support">Texto de apoio</span>
+            </label>
+            <label class="text-input">
+              <span class="text-input__label">Nome com erro</span>
+              <input class="text-input__field text-input__field--error" type="text" placeholder="Erro" />
+              <span class="text-input__support text-input__support--error">Mensagem de erro</span>
+            </label>
+            <label class="dropdown">
+              <span class="text-input__label">Plano</span>
+              <select class="dropdown__trigger">
+                <option>Starter</option>
+                <option>Pro</option>
+                <option>Enterprise</option>
+              </select>
+            </label>
+            <label class="dropdown">
+              <span class="text-input__label">Plano com erro</span>
+              <select class="dropdown__trigger dropdown__trigger--error">
+                <option>Selecione</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Badge / Alert / Status Badge</h2>
+          <div class="demo-stack">
+            <div class="demo-row">
+              <span class="badge badge--md badge--blue-filled">Blue</span>
+              <span class="badge badge--sm badge--red-light">Red</span>
+              <span class="badge badge--xs badge--orange-light">Orange</span>
+              <span class="badge badge--md badge--yellow-filled">Yellow</span>
+              <span class="badge badge--md badge--purple-filled">Purple</span>
+              <span class="badge badge--md badge--pink-filled">Pink</span>
+            </div>
+            <div class="demo-grid">
+              <div class="alert alert--info-filled">
+                <div>
+                  <div class="alert__title">Info filled</div>
+                  <div class="alert__body">Mensagem de feedback informativo.</div>
+                </div>
+              </div>
+              <div class="alert alert--success-light">
+                <div>
+                  <div class="alert__title">Success light</div>
+                  <div class="alert__body">Mensagem de sucesso.</div>
+                </div>
+              </div>
+              <div class="alert alert--warning-filled">
+                <div>
+                  <div class="alert__title">Warning filled</div>
+                  <div class="alert__body">Atenção antes de continuar.</div>
+                </div>
+              </div>
+              <div class="alert alert--error-light">
+                <div>
+                  <div class="alert__title">Error light</div>
+                  <div class="alert__body">Algo deu errado.</div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-row">
+              <span class="status-badge status-badge--neutral">
+                <span class="status-badge__dot"></span>
+                Draft
+              </span>
+              <span class="status-badge status-badge--success">
+                <span class="status-badge__dot"></span>
+                Published
+              </span>
+              <span class="status-badge status-badge--warning">
+                <span class="status-badge__dot"></span>
+                Pending
+              </span>
+              <span class="status-badge status-badge--error">
+                <span class="status-badge__dot"></span>
+                Blocked
+              </span>
+              <span class="status-badge status-badge--info">
+                <span class="status-badge__dot"></span>
+                Info
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Avatar / Checkbox / Radio / Toggle</h2>
+          <div class="demo-row">
+            <div class="avatar avatar--xs">LC</div>
+            <div class="avatar avatar--sm">LC</div>
+            <div class="avatar avatar--md">LC</div>
+            <div class="avatar avatar--lg">LC</div>
+            <div class="avatar avatar--xl">LC</div>
+          </div>
+          <div class="demo-row">
+            <label class="control-inline"><input class="sr-only" type="checkbox" checked /><span class="checkbox checkbox--xs checkbox--selected"></span><span>Checkbox XS</span></label>
+            <label class="control-inline"><input class="sr-only" type="checkbox" /><span class="checkbox checkbox--sm"></span><span>Checkbox SM</span></label>
+            <label class="control-inline"><input class="sr-only" type="radio" checked /><span class="radio radio--xs radio--selected"></span><span>Radio XS</span></label>
+            <label class="control-inline"><input class="sr-only" type="radio" /><span class="radio radio--sm"></span><span>Radio SM</span></label>
+            <label class="control-inline"><input class="sr-only" type="checkbox" checked /><span class="toggle toggle--xs toggle--selected"><span class="toggle__thumb"></span></span><span>Toggle XS</span></label>
+            <label class="control-inline"><input class="sr-only" type="checkbox" /><span class="toggle toggle--sm"><span class="toggle__thumb"></span></span><span>Toggle SM</span></label>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Tag / Tooltip / Divider</h2>
+          <div class="demo-row">
+            <span class="tag tag--xs">XS</span>
+            <span class="tag tag--sm">SM</span>
+            <span class="tag tag--md">MD</span>
+            <span class="tooltip tooltip--inverse-filled">Tooltip inverse</span>
+            <span class="tooltip tooltip--brand-filled">Tooltip brand</span>
+            <span class="tooltip tooltip--swap-filled">Tooltip swap</span>
+          </div>
+          <div class="demo-stack">
+            <div class="divider"></div>
+            <div class="divider divider--dotted"></div>
+            <div class="divider divider--text"><span>Divider text</span></div>
+            <div class="divider divider--icon"><span>⟡</span></div>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Typography</h2>
+          <div class="demo-stack">
+            <div class="display-large">Display Large</div>
+            <div class="display-medium">Display Medium</div>
+            <div class="heading-xxl">Heading XXL</div>
+            <div class="heading-xl">Heading XL</div>
+            <div class="heading-l">Heading L</div>
+            <div class="heading-m">Heading M</div>
+            <div class="heading-s">Heading S</div>
+            <div class="heading-xs">Heading XS</div>
+            <div class="paragraph-large">Paragraph large — texto para conteúdo extenso.</div>
+            <div class="paragraph-base">Paragraph base — texto principal da interface.</div>
+            <div class="paragraph-small">Paragraph small — apoio e observação.</div>
+            <div class="label-xlarge">Label XLarge</div>
+            <div class="label-large">Label Large</div>
+            <div class="label-base">Label Base</div>
+            <div class="label-small">Label Small</div>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Progress Bar / Tab Menu / Pagination / Rating</h2>
+          <div class="demo-stack">
+            <div class="progress-bar progress-bar--lg">
+              <div class="progress-bar__track">
+                <div class="progress-bar__fill" style="width: 68%"></div>
+              </div>
+              <span class="progress-bar__label">68%</span>
+            </div>
+            <nav class="tab-menu" aria-label="Tabs">
+              <button class="tab-menu__item tab-menu__item--active" type="button">Overview</button>
+              <button class="tab-menu__item" type="button">Details</button>
+              <button class="tab-menu__item" type="button">History</button>
+            </nav>
+            <div class="pagination">
+              <button class="pagination__item pagination__item--2xl" type="button">‹</button>
+              <button class="pagination__item" type="button">1</button>
+              <button class="pagination__item pagination__item--active" type="button">2</button>
+              <button class="pagination__item" type="button">3</button>
+              <button class="pagination__item pagination__item--2xl" type="button">›</button>
+            </div>
+            <div class="rating" aria-label="4 de 5 estrelas">
+              <span class="rating__item rating__item--filled">★</span>
+              <span class="rating__item rating__item--filled">★</span>
+              <span class="rating__item rating__item--filled">★</span>
+              <span class="rating__item rating__item--filled">★</span>
+              <span class="rating__item">★</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-section">
+          <h2 class="heading-xs">Upload / List Item / Step Bar / Table</h2>
+          <div class="demo-stack">
+            <label class="upload-input">
+              <span class="upload-input__label">File upload</span>
+              <span class="upload-input__dropzone">
+                <input class="upload-input__control" type="file" />
+              </span>
+            </label>
+            <div class="list-item list-item--active">
+              <div class="list-item__leading"><span class="badge badge--xs badge--blue-filled">1</span></div>
+              <div class="list-item__content">
+                <strong class="list-item__title">List item active</strong>
+                <p class="list-item__description">Secondary description</p>
+              </div>
+              <div class="list-item__trailing"><span class="status-badge status-badge--success"><span class="status-badge__dot"></span>Ready</span></div>
+            </div>
+            <ol class="step-bar">
+              <li class="step-bar__step step-bar__step--complete">1</li>
+              <li class="step-bar__connector step-bar__connector--complete"></li>
+              <li class="step-bar__step step-bar__step--complete">2</li>
+              <li class="step-bar__connector step-bar__connector--complete"></li>
+              <li class="step-bar__step step-bar__step--active">3</li>
+              <li class="step-bar__connector"></li>
+              <li class="step-bar__step">4</li>
+            </ol>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="table__header">Componente</th>
+                  <th class="table__header">Status</th>
+                  <th class="table__header">Notas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="table__row">
+                  <td class="table__cell">Button</td>
+                  <td class="table__cell">Ready</td>
+                  <td class="table__cell">Variants included</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell">Text Input</td>
+                  <td class="table__cell">Ready</td>
+                  <td class="table__cell">Error state included</td>
+                </tr>
+                <tr class="table__row">
+                  <td class="table__cell">Table</td>
+                  <td class="table__cell">Ready</td>
+                  <td class="table__cell">Header/body styles</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="demo-note">Todos os componentes listados no documento estão representados acima com suas classes do design system.</p>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      toggle.checked = document.documentElement.getAttribute('data-theme') === 'dark';
+      toggle?.addEventListener('change', (event) => {
+        const checked = event.target instanceof HTMLInputElement && event.target.checked;
+        document.documentElement.setAttribute('data-theme', checked ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>
