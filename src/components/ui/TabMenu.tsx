@@ -12,7 +12,7 @@ export function TabMenu({ tabs, activeIndex }: TabMenuProps) {
           type="button"
           role="tab"
           aria-selected={index === activeIndex}
-          className={`tab-menu__tab ${index === activeIndex ? 'is-active' : ''}`.trim()}
+          className={`tab-menu__item ${index === activeIndex ? 'tab-menu__item--active' : ''}`.trim()}
         >
           {tab}
         </button>
@@ -20,4 +20,3 @@ export function TabMenu({ tabs, activeIndex }: TabMenuProps) {
     </div>
   );
 }
-

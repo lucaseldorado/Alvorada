@@ -3,15 +3,15 @@ import type { InputHTMLAttributes } from 'react';
 type TextInputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
   supportText?: string;
+  error?: boolean;
 };
 
-export function TextInput({ label, supportText, className = '', ...props }: TextInputProps) {
+export function TextInput({ label, supportText, error = false, className = '', ...props }: TextInputProps) {
   return (
-    <label className={`field field--text-input ${className}`.trim()}>
-      {label ? <span className="field__label">{label}</span> : null}
-      <input className="field__control" type="text" {...props} />
-      {supportText ? <span className="field__support">{supportText}</span> : null}
+    <label className={`text-input ${className}`.trim()}>
+      {label ? <span className="text-input__label">{label}</span> : null}
+      <input className={`text-input__field ${error ? 'text-input__field--error' : ''}`.trim()} type="text" {...props} />
+      {supportText ? <span className={`text-input__support ${error ? 'text-input__support--error' : ''}`.trim()}>{supportText}</span> : null}
     </label>
   );
 }
-

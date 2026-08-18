@@ -8,8 +8,9 @@ export function UploadInput({ label, className = '', ...props }: UploadInputProp
   return (
     <label className={`upload-input ${className}`.trim()}>
       <span className="upload-input__label">{label}</span>
-      <input type="file" className="upload-input__control" {...props} />
+      <span className="upload-input__dropzone">
+        <input type="file" className="upload-input__control" {...props} />
+      </span>
     </label>
   );
 }
-

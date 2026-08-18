@@ -33,7 +33,7 @@ export default function App() {
   return (
     <main className="app">
       <section className="container">
-        <Badge tone="info">Alvorada Design System</Badge>
+        <Badge color="blue" appearance="light">Alvorada Design System</Badge>
         <h1>CSS dos Componentes</h1>
         <p className="lead">
           Base de componentes em React + TypeScript inspirada no frame do Figma para acelerar a exportação do design

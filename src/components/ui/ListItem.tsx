@@ -5,11 +5,12 @@ type ListItemProps = {
   description?: string;
   leading?: ReactNode;
   trailing?: ReactNode;
+  active?: boolean;
 };
 
-export function ListItem({ title, description, leading, trailing }: ListItemProps) {
+export function ListItem({ title, description, leading, trailing, active = false }: ListItemProps) {
   return (
-    <div className="list-item">
+    <div className={`list-item ${active ? 'list-item--active' : ''}`.trim()}>
       {leading ? <div className="list-item__leading">{leading}</div> : null}
       <div className="list-item__content">
         <strong className="list-item__title">{title}</strong>
@@ -19,4 +20,3 @@ export function ListItem({ title, description, leading, trailing }: ListItemProp
     </div>
   );
 }
-

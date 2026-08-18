@@ -2,17 +2,19 @@ import type { InputHTMLAttributes } from 'react';
 
 type ToggleProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
+  controlSize?: 'sm' | 'xs';
 };
 
-export function Toggle({ label, className = '', ...props }: ToggleProps) {
+export function Toggle({ label, controlSize = 'sm', className = '', ...props }: ToggleProps) {
+  const isSelected = Boolean(props.checked ?? props.defaultChecked);
+
   return (
-    <label className={`control control--toggle ${className}`.trim()}>
-      <input type="checkbox" className="control__input" {...props} />
-      <span className="control__track">
-        <span className="control__thumb" />
+    <label className={`control-inline ${className}`.trim()}>
+      <input type="checkbox" className="sr-only" {...props} />
+      <span className={`toggle toggle--${controlSize} ${isSelected ? 'toggle--selected' : ''}`.trim()} aria-hidden="true">
+        <span className="toggle__thumb" />
       </span>
-      <span className="control__label">{label}</span>
+      <span>{label}</span>
     </label>
   );
 }
-

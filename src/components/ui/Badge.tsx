@@ -2,10 +2,11 @@ import type { ReactNode } from 'react';
 
 type BadgeProps = {
   children: ReactNode;
-  tone?: 'neutral' | 'info' | 'success' | 'warning' | 'error';
-  size?: 'sm' | 'md' | 'lg';
+  color?: 'blue' | 'red' | 'green' | 'orange' | 'yellow' | 'purple' | 'pink';
+  appearance?: 'filled' | 'light' | 'outline';
+  size?: 'xs' | 'sm' | 'md';
 };
 
-export function Badge({ children, tone = 'neutral', size = 'md' }: BadgeProps) {
-  return <span className={`badge badge--${tone} badge--${size}`}>{children}</span>;
+export function Badge({ children, color = 'blue', appearance = 'light', size = 'md' }: BadgeProps) {
+  return <span className={`badge badge--${size} badge--${color}-${appearance}`}>{children}</span>;
 }
