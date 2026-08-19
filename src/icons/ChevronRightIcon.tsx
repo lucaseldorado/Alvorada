@@ -1,9 +1,0 @@
-import type { IconProps } from './types';
-
-export function ChevronRightIcon({ size = 20, ...props }: IconProps) {
-  return (
-    <svg viewBox="0 0 24 24" width={size} height={size} fill="none" aria-hidden="true" {...props}>
-      <path d="m9 6 6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
